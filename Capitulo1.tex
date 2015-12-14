@@ -1,0 +1,33 @@
+% ------------------------------------------------------------------------
+%                             Capítulo 1
+% ------------------------------------------------------------------------
+\chapter{Introducción}
+En las últimas décadas el gran aumento del número de vehículos circulando por las carreteras ha puesto de manifiesto la necesidad de desarrollar nuevas técnicas de gestión de tráfico que permitan la automatización de este proceso.\\
+
+Los sistemas \ac{ALPR} (Automatic License Plate Recognition) son un elemento clave para lograr esta automatización. Ya que permiten identificar un vehículo en distintas situaciones sin ser necesaria la intervención de un operario humano.
+
+\section{Importancia de los sistemas \acs{ALPR}}
+Las técnicas \acs{ALPR} consisten en la extracción de la información de la matrícula de un vehículo a través de una imagen o secuencia de imágenes. 
+
+Dichas técnicas juegan un papel importante en numerosas aplicaciones de la vida real, como el cobro automático de peajes, la ayuda a la policía de tráfico, el control de acceso a párquines o la motorización del tráfico en las carreteras. \cite{IEEEtrans}\\
+
+La gran proliferación de los sistemas \ac{ALPR} en los últimos años se debe, en parte, a la evolución de los sistemas empotrados: sistemas de propósito específico con la mayoría de sus componentes integrados en la misma placa de circuito impreso. \cite{ wiki1}
+
+Los sistemas empotrados permiten la implementación de un sistema \acs{ALPR} completo en poco espacio con un coste y consumo reducido. 
+
+\section{Objetivos del \acf{TFG}}
+El \ac{TFG} aquí presentado tiene como objetivo el desarrollo de un algoritmo \acs{ALPR} básico con vistas a su implementación en un placa de sistema empotrado Raspberry Pi, equipada con una cámara de vídeo. El desarrollo del algoritmo se realizará mediante el entorno Matlab, para posteriormente portar el algoritmo a C++ haciendo uso de la librería gráfica OpenCV y poder así ejecutarlo en la placa.
+
+\section{Estructura de la memoria}
+Esta memoria se ha estructurado en cinco capítulos:
+\begin{enumerate}
+\item \textbf{Introducción:} Se plantean las motivaciones para la realización de este \ac{TFG} y los objetivos que pretenden alcanzarse.
+
+\item \textbf{Algoritmos y herramientas:} Se presentan algunos de los programas utilizados y los algoritmos esenciales para el trabajo.
+
+\item \textbf{Desarrollo del algoritmo \ac{ALPR}:} En este apartado se describen los pasos seguidos para la creación del algoritmo \ac{ALPR} mediante Matlab.
+
+\item \textbf{Implementación en C++:} Una vez explicado con detalle el algoritmo, este apartado pasa a centrarse en las diferencias y dificultades encontradas en el proceso de portar el código desarrollado en Matlab a C++.
+
+\item \textbf{Conclusiones y líneas futuras:} Se exponen las conclusiones a las que se ha llegado tras la realización del trabajo; así como algunas de las posibles vías de ampliación y mejora del proyecto.
+\end{enumerate}

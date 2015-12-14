@@ -1,0 +1,29 @@
+% ------------------------------------------------------------------------
+%                             Capítulo 5
+% ------------------------------------------------------------------------
+\chapter{Conclusiones y líneas futuras}
+Para finalizar en este capítulo se analizan las conclusiones extraídas de la realización de este \ac{TFG}, así como algunas de las posibles líneas a seguir para mejorar el trabajo realizado.
+
+\section{Conclusiones}
+El objetivo de este \ac{TFG} era el desarrollo de un algoritmo \ac{ALPR} básico con vistas a su implementación en una placa Raspberry Pi.\\
+
+Para llevarlo a cabo, en primer lugar se ha realizado un modelo inicial del algoritmo usando el entorno Matlab. Se ha preferido realizar este primer paso en lugar de proceder directamente a la implementación en C++ ya que Matlab ofrece una gran facilidad para depurar código; siendo posible detener la ejecución del código en cualquier punto, acceder al valor de las variables e incluso realizar operaciones con estos valores. Además, la forma de representación de las imágenes que usa resulta muy cómoda para depurar el algoritmo; puesto que es posible tratar la imagen tanto con funciones de alto nivel como acceder al valor individual de cada píxel.\\
+
+Como contrapartida, el desarrollo en C++ no cuenta con tantas facilidades.  Pero en cambio, produce un código mucho más rápido y fácilmente portable a un gran número de dispositivos.\\
+
+En cuanto al algoritmo \ac{ALPR}, la combinación de la función Canny con la transformada de Hough ha demostrado dar buenos resultados a la hora de detectar las placas de matrícula; especialmente cuando las imágenes son tomadas en buenas condiciones de luminosidad.\\
+
+Otra conclusión obtenida es que el método utilizado para calcular la correlación entre los dígitos extraídos de  la imagen y los dígitos de la tipografía no es lo suficientemente eficaz. Durante la realización de este TFG se ha empleado un método basado en la comparación píxel a píxel. Esto provoca numerosos errores, especialmente si la matrícula presenta daños. También se han encontrado problemas con el carácter de la Unión Europea, presente en la mayoría de las matrículas, puesto que lo reconoce como un carácter válido.\\
+
+Por último, se ha podido comprobar la importancia de la iluminación en este tipo de algoritmos. Una aplicación \ac{ALPR} comercial debería encontrar alguna forma de controlar este factor.
+
+\section{Líneas futuras}
+A continuación se presentan algunas posibles vías para completar y mejorar el trabajo presentado:
+
+\begin{itemize}
+\item Completar la implementación en C++/OpenCV. La segmentación en color no pudo ser implementada en OpenCV debido a limitaciones de tiempo. Por tanto, es la línea de continuación más clara. Además, como se explico en el apartado \ref{CannyCV}, la función que realiza la detección de las líneas mediante la transformada de Hough debe ser revisada.
+
+\item Ejecutar el algoritmo sobre la placa Raspberry Pi. Una vez se cuenta con el código en C++/OpenCV es necesario utilizar un compilador cruzado para generar un ejecutable que pueda funcionar sobre la placa. También habría que desarrollar el código necesario para utilizar la cámara disponible en la placa como fuente de las imágenes.
+
+\item Estudiar la posibilidad de hacer compatible el algoritmo desarrollado con otros sistemas. Resultaría especialmente interesante una versión compatible con smartphones, debido a su gran éxito comercial y a que generalmente disponen de cámara de vídeo y potencia de cómputo suficiente para ejecutar un algoritmo \ac{ALPR}.
+\end{itemize}
